@@ -43,6 +43,7 @@ func (s *mysql) DataTypeOf(field *StructField) string {
 	}
 
 	if sqlType == "" {
+		fmt.Println(dataValue.Kind())
 		switch dataValue.Kind() {
 		case reflect.Bool:
 			sqlType = "boolean"
