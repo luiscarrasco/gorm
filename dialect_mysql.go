@@ -9,7 +9,6 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-	"github.com/golang/protobuf/ptypes"
 	ts "github.com/golang/protobuf/ptypes/timestamp"
 )
 
