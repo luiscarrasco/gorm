@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
-	"fmt"
 	"github.com/golang/protobuf/ptypes"
+	ts "github.com/golang/protobuf/ptypes/timestamp"
 )
 
 var mysqlIndexRegex = regexp.MustCompile(`^(.+)\((\d+)\)$`)
@@ -109,7 +109,7 @@ func (s *mysql) DataTypeOf(field *StructField) string {
 				} else {
 					sqlType = fmt.Sprintf("timestamp%v NULL", precision)
 				}
-			} else if _, ok := dataValue.Interface().(ptypes.timestamp.Timestamp); ok {
+			} else if _, ok := dataValue.Interface().(ts.Timestamp); ok {
 				fmt.Println("gorm: has timestamp")
 			}
 		default:
